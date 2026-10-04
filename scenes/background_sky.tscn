@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dotyl1ky6rwxr"]
+
+[ext_resource type="Texture2D" uid="uid://c01ajsl0g4e1y" path="res://assets/layers/country-platform-back.png" id="1_t77kt"]
+
+[node name="background_sky" type="Node2D" unique_id=1367677344]
+z_index = -2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=26429151]
+position = Vector2(0, 117.5)
+scale = Vector2(2.671875, 2.5669641)
+texture = ExtResource("1_t77kt")

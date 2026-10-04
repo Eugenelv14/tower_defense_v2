@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b128t3uu8gh1a"]
+
+[ext_resource type="Texture2D" uid="uid://mg33nljhawlg" path="res://assets/layers/country-platform-tiles-example.png" id="1_tq3gw"]
+
+[node name="background_road" type="Node2D" unique_id=2034696501]
+z_index = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=900357237]
+scale = Vector2(2.21875, 1.6785715)
+texture = ExtResource("1_tq3gw")

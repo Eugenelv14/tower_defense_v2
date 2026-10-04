@@ -2,18 +2,46 @@
 
 [ext_resource type="PackedScene" uid="uid://d1mk1lcc3bskx" path="res://scenes/tower.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://curdodwuac87h" path="res://scenes/defender.tscn" id="2_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://d0x3u5nbhve25" path="res://scenes/enemies/slime.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://d0x3u5nbhve25" path="res://scenes/enemies/slime_green.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://dotyl1ky6rwxr" path="res://scenes/background_sky.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://b128t3uu8gh1a" path="res://scenes/background_road.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://be0i33q87hbkm" path="res://scenes/enemies/slime_purple.tscn" id="5_tipki"]
+[ext_resource type="PackedScene" uid="uid://vtbcx4jkcxus" path="res://scenes/enemies/goblin.tscn" id="7_85g3d"]
+[ext_resource type="PackedScene" uid="uid://b2havwue4wkrh" path="res://scenes/enemies/flying_eye.tscn" id="8_choun"]
+[ext_resource type="PackedScene" uid="uid://ds76s4s4banpf" path="res://scenes/enemies/skeleton.tscn" id="9_85g3d"]
+[ext_resource type="PackedScene" uid="uid://wki357ewe4wd" path="res://scenes/enemies/mushroom.tscn" id="10_choun"]
 
 [node name="main" type="Node2D" unique_id=145423580]
+
+[node name="background_road" parent="." unique_id=2034696501 instance=ExtResource("5_tbgi4")]
+position = Vector2(-17, 37)
+
+[node name="background_sky" parent="." unique_id=1367677344 instance=ExtResource("4_jyhfs")]
+position = Vector2(0, -73)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1106965959]
 zoom = Vector2(1.5, 1.5)
 
 [node name="tower" parent="." unique_id=845851787 instance=ExtResource("1_o5qli")]
-position = Vector2(253, 57)
+position = Vector2(329, 95)
 
 [node name="defender" parent="." unique_id=410263393 instance=ExtResource("2_0wfyh")]
-position = Vector2(252, -4)
+position = Vector2(327, 19)
 
-[node name="slime" parent="." unique_id=407196257 instance=ExtResource("3_sugp2")]
-position = Vector2(-66, 81)
+[node name="slime_purple" parent="." unique_id=1472140528 instance=ExtResource("5_tipki")]
+position = Vector2(-133, 154)
+
+[node name="slime_green" parent="." unique_id=407196257 instance=ExtResource("3_sugp2")]
+position = Vector2(-90, 149)
+
+[node name="goblin" parent="." unique_id=1328581767 instance=ExtResource("7_85g3d")]
+position = Vector2(-178, 147)
+
+[node name="flying_eye" parent="." unique_id=1826955915 instance=ExtResource("8_choun")]
+position = Vector2(-121, 100)
+
+[node name="skeleton" parent="." unique_id=184592380 instance=ExtResource("9_85g3d")]
+position = Vector2(-235, 146)
+
+[node name="mushroom" parent="." unique_id=790063064 instance=ExtResource("10_choun")]
+position = Vector2(-54, 147)

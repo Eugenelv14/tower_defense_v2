@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://be0i33q87hbkm"]
+
+[ext_resource type="Texture2D" uid="uid://dfdy7podl45us" path="res://assets/enemy_assets/slime/slime_purple.png" id="1_wjlyj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1iatm"]
+atlas = ExtResource("1_wjlyj")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujtmk"]
+atlas = ExtResource("1_wjlyj")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmxw6"]
+atlas = ExtResource("1_wjlyj")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6s7y"]
+atlas = ExtResource("1_wjlyj")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_utxm4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1iatm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujtmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmxw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6s7y")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0uv0u"]
+size = Vector2(10, 11)
+
+[node name="slime_purple" type="Area2D" unique_id=1472140528]
+z_index = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2012098646]
+scale = Vector2(1.75, 1.6666667)
+sprite_frames = SubResource("SpriteFrames_utxm4")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.33169886
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=859825197]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_0uv0u")

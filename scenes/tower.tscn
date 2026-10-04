@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://d1mk1lcc3bskx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utxm4"]
-size = Vector2(40, 81)
+size = Vector2(43, 130)
 
 [node name="tower" type="StaticBody2D" unique_id=845851787]
+z_index = 1
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1346713223]
-position = Vector2(10.499974, -9.961532)
 scale = Vector2(1.3124986, 2.0400636)
 color = Color(0.6255971, 0.6255971, 0.6255971, 1)
-polygon = PackedVector2Array(-24.000008, -20.606451, -24, 24, 8.0000305, 24, 8.0000305, -16.000002, -16, -16.000002, -16, -20.606451)
-uv = PackedVector2Array(-24, -24.000002, -24, 24, 8.0000305, 24, 8.0000305, -16.000002, -16, -16.000002, -16, -24.000002)
+polygon = PackedVector2Array(15.999985, -23.999998, -16, -23.999998, -16, 40, 15.999985, 40)
+uv = PackedVector2Array(16, -15.999998, -32, -15.999998, -32, 40, 16, 40)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1412954021]
-position = Vector2(0, -1.5)
+position = Vector2(-1.5, 16)
 shape = SubResource("RectangleShape2D_utxm4")

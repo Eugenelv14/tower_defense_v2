@@ -40,11 +40,11 @@ animations = [{
 }]
 
 [node name="defender" type="Node2D" unique_id=410263393]
+z_index = 1
 script = ExtResource("1_2g18h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2064993636]
-position = Vector2(1, 0.99999905)
-scale = Vector2(1.0625, 1.3750001)
+scale = Vector2(2.125, 2.1562502)
 sprite_frames = SubResource("SpriteFrames_utxm4")
 animation = &"idle"
 autoplay = "idle"
