@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://curdodwuac87h"]
+
+[ext_resource type="Script" uid="uid://dllb3io5ngx5m" path="res://scripts/defender.gd" id="1_2g18h"]
+[ext_resource type="Texture2D" uid="uid://cv87seno1dfno" path="res://assets/knight.png" id="2_j8307"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15t5d"]
+atlas = ExtResource("2_j8307")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8717"]
+atlas = ExtResource("2_j8307")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yu2cx"]
+atlas = ExtResource("2_j8307")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wel6m"]
+atlas = ExtResource("2_j8307")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_utxm4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15t5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8717")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yu2cx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wel6m")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="defender" type="Node2D" unique_id=410263393]
+script = ExtResource("1_2g18h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2064993636]
+position = Vector2(1, 0.99999905)
+scale = Vector2(1.0625, 1.3750001)
+sprite_frames = SubResource("SpriteFrames_utxm4")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.37095425
