@@ -38,10 +38,10 @@ position = Vector2(-90, 149)
 position = Vector2(-178, 147)
 
 [node name="flying_eye" parent="." unique_id=1826955915 instance=ExtResource("8_choun")]
-position = Vector2(-121, 100)
+position = Vector2(-118, 83)
 
 [node name="skeleton" parent="." unique_id=184592380 instance=ExtResource("9_85g3d")]
-position = Vector2(-235, 146)
+position = Vector2(-229, 145)
 
 [node name="mushroom" parent="." unique_id=790063064 instance=ExtResource("10_choun")]
-position = Vector2(-54, 147)
+position = Vector2(-42, 145)

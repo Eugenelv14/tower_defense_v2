@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://curdodwuac87h"]
 
 [ext_resource type="Script" uid="uid://dllb3io5ngx5m" path="res://scripts/defender.gd" id="1_2g18h"]
+[ext_resource type="PackedScene" uid="uid://ck1esyx8cm5ti" path="res://scenes/arrow.tscn" id="2_15t5d"]
 [ext_resource type="Texture2D" uid="uid://cv87seno1dfno" path="res://assets/knight.png" id="2_j8307"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_15t5d"]
@@ -39,9 +40,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_utxm4"]
+size = Vector2(596, 190)
+
 [node name="defender" type="Node2D" unique_id=410263393]
-z_index = 1
 script = ExtResource("1_2g18h")
+arrow = ExtResource("2_15t5d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2064993636]
 scale = Vector2(2.125, 2.1562502)
@@ -49,3 +53,22 @@ sprite_frames = SubResource("SpriteFrames_utxm4")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.37095425
+
+[node name="ArrowSpawn" type="Marker2D" parent="." unique_id=2085014439]
+position = Vector2(-16, 8)
+gizmo_extents = 66.3
+
+[node name="Detection" type="Area2D" parent="." unique_id=758174806]
+position = Vector2(-79, -21)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection" unique_id=2027915902]
+position = Vector2(-233, 94)
+shape = SubResource("RectangleShape2D_utxm4")
+
+[node name="Timer" type="Timer" parent="." unique_id=991890913]
+autostart = true
+
+[connection signal="area_entered" from="Detection" to="." method="_on_detection_area_entered"]
+[connection signal="area_exited" from="Detection" to="." method="_on_detection_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
