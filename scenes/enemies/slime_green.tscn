@@ -42,7 +42,6 @@ animations = [{
 size = Vector2(24, 20)
 
 [node name="slime_green" type="Area2D" unique_id=407196257]
-z_index = 1
 
 [node name="Area2D" type="AnimatedSprite2D" parent="." unique_id=605893345]
 scale = Vector2(2.25, 2.1666667)
