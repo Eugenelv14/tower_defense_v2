@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dp0l8xo05euch"]
+
+[ext_resource type="Script" uid="uid://c1mwnegqrs203" path="res://resources/enemy_data.gd" id="1_8j2pq"]
+[ext_resource type="SpriteFrames" uid="uid://dahqqekg1tdnb" path="res://data/frame_data/skeleton_frames.tres" id="2_1aei7"]
+
+[resource]
+script = ExtResource("1_8j2pq")
+sprite_frames = ExtResource("2_1aei7")
+metadata/_custom_type_script = "uid://c1mwnegqrs203"

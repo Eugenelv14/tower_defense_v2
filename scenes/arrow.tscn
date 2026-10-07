@@ -12,12 +12,12 @@ script = ExtResource("1_umosx")
 
 [node name="ArrowShape" type="Polygon2D" parent="." unique_id=86107510]
 position = Vector2(-3.1999984, 0)
+rotation = 3.1415927
 scale = Vector2(0.18999998, 0.16666667)
-polygon = PackedVector2Array(80, 0, 80, 8, -56.000057, 8.000008, -56.00001, 24, -120, 0, -56.00001, -24, -55.999996, -8, 80, -8.000004)
+polygon = PackedVector2Array(80, 0, 80, 8, -56.000057, 8.000008, -56.00001, 24, -120, 0, -56.00001, -24, -55.999996, -8, -2.9526367, -8, 80, -8.000004)
 uv = PackedVector2Array(-48, -40)
 
 [node name="ArrowCollision" type="CollisionShape2D" parent="." unique_id=1874406465]
-position = Vector2(-6, 0)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_y4kuj")
 

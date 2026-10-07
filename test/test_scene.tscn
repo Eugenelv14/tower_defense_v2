@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://j5uero8gm1ir"]
+
+[ext_resource type="PackedScene" uid="uid://x7ii8w8oocca" path="res://scenes/spawner.tscn" id="1_m5cd5"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_toqdm"]
+
+[node name="test_scene" type="Node2D" unique_id=436567127]
+
+[node name="Enemy_Container" type="Node2D" parent="." unique_id=665569650]
+
+[node name="Spawner" parent="Enemy_Container" unique_id=1216322064 node_paths=PackedStringArray("enemy_container") instance=ExtResource("1_m5cd5")]
+position = Vector2(-1, -7)
+enemy_container = NodePath("..")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2055524147]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1780540975]
+shape = SubResource("WorldBoundaryShape2D_toqdm")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=795969162]

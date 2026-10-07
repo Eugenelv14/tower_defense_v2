@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="WaveData" format=3 uid="uid://b53eogi67e55l"]
+
+[ext_resource type="Script" uid="uid://dh2bwarpht5js" path="res://resources/spawn_group.gd" id="1_yqpjn"]
+[ext_resource type="Script" uid="uid://dnyrbw7w1catg" path="res://resources/wave_data.gd" id="2_1582m"]
+[ext_resource type="Resource" uid="uid://ggfgn6d8qrd7" path="res://data/enemy_data/goblin_stats.tres" id="2_a3wtn"]
+[ext_resource type="Resource" uid="uid://dqg5be6142fvt" path="res://data/enemy_data/slime_stats.tres" id="3_fsfa2"]
+
+[sub_resource type="Resource" id="Resource_a3wtn"]
+script = ExtResource("1_yqpjn")
+enemy = ExtResource("2_a3wtn")
+metadata/_custom_type_script = "uid://dh2bwarpht5js"
+
+[sub_resource type="Resource" id="Resource_fsfa2"]
+script = ExtResource("1_yqpjn")
+enemy = ExtResource("3_fsfa2")
+metadata/_custom_type_script = "uid://dh2bwarpht5js"
+
+[resource]
+script = ExtResource("2_1582m")
+groups = Array[ExtResource("1_yqpjn")]([SubResource("Resource_a3wtn"), SubResource("Resource_fsfa2")])
+metadata/_custom_type_script = "uid://dnyrbw7w1catg"

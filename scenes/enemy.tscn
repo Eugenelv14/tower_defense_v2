@@ -1,8 +1,41 @@
 [gd_scene format=3 uid="uid://c6obibxyiik7u"]
 
+[ext_resource type="Script" uid="uid://b07wrugeg45fr" path="res://scripts/enemy.gd" id="1_md0e3"]
+[ext_resource type="PackedScene" uid="uid://d1mpromkuswdj" path="res://scenes/Components/movement_component.tscn" id="2_5uy6h"]
+[ext_resource type="Resource" uid="uid://dp0l8xo05euch" path="res://data/enemy_data/skeleton_stats.tres" id="2_nenq2"]
+[ext_resource type="PackedScene" uid="uid://c5huhgco1h18y" path="res://scenes/Components/health_component.tscn" id="3_c4w8v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mkw3j"]
+animations = []
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3cj8d"]
+size = Vector2(35.5, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5uy6h"]
+size = Vector2(18, 18)
+
 [node name="Enemy" type="CharacterBody2D" unique_id=1921786925]
+collision_mask = 2
+script = ExtResource("1_md0e3")
+data = ExtResource("2_nenq2")
+
+[node name="MovementComponent" parent="." unique_id=586789408 instance=ExtResource("2_5uy6h")]
+
+[node name="HealthComponent" parent="." unique_id=536127152 instance=ExtResource("3_c4w8v")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1656884699]
-position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_mkw3j")
+animation = &""
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=221169412]
+shape = SubResource("RectangleShape2D_3cj8d")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=59372555]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=191905833]
+shape = SubResource("RectangleShape2D_5uy6h")
+debug_color = Color(0.993934, 0, 0.23709044, 0.41960785)
+
+[connection signal="reached_end" from="MovementComponent" to="." method="_on_movement_component_reached_end"]
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

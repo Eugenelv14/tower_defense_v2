@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://x7ii8w8oocca"]
+
+[ext_resource type="Script" uid="uid://c7bf1xw8tbtfv" path="res://scripts/spawner.gd" id="1_2vbf6"]
+[ext_resource type="PackedScene" uid="uid://c6obibxyiik7u" path="res://scenes/enemy.tscn" id="2_tx2ig"]
+[ext_resource type="Script" uid="uid://dnyrbw7w1catg" path="res://resources/wave_data.gd" id="3_6bbd6"]
+[ext_resource type="Resource" uid="uid://d3qo0q08dsej" path="res://data/wave_data/wave_01.tres" id="4_cmhla"]
+[ext_resource type="Resource" uid="uid://b53eogi67e55l" path="res://data/wave_data/wave_02.tres" id="5_cmhla"]
+
+[node name="Spawner" type="Node2D" unique_id=1216322064]
+script = ExtResource("1_2vbf6")
+enemy_scene = ExtResource("2_tx2ig")
+waves = Array[ExtResource("3_6bbd6")]([ExtResource("4_cmhla"), ExtResource("5_cmhla")])
+initial_countdown = 3.0
+spawn_interval = 0.5
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=1703551526]
+position = Vector2(-65, 0)
+
+[node name="GoalPoint" type="Marker2D" parent="." unique_id=1322508399]
+position = Vector2(55, 0)

@@ -7,7 +7,7 @@ extends Node2D
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$AnimatedSprite2D.flip_h = true	
 	
 	
@@ -36,7 +36,7 @@ func _on_timer_timeout() -> void:
 
 
 #To track which enemy is closest and target that enemy
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	closest_distance = INF
 	closest_enemy = null
 	if tracking:
