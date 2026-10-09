@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://by3u4qwcettwc"]
 
+[ext_resource type="Script" uid="uid://c6icqstuwp13c" path="res://scripts/main.gd" id="1_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://d1mk1lcc3bskx" path="res://scenes/tower.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://curdodwuac87h" path="res://scenes/defender.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://d0x3u5nbhve25" path="res://scenes/enemies/slime_green.tscn" id="3_sugp2"]
@@ -10,8 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://b2havwue4wkrh" path="res://scenes/enemies/flying_eye.tscn" id="8_choun"]
 [ext_resource type="PackedScene" uid="uid://ds76s4s4banpf" path="res://scenes/enemies/skeleton.tscn" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://wki357ewe4wd" path="res://scenes/enemies/mushroom.tscn" id="10_choun"]
+[ext_resource type="FontFile" uid="uid://b4virr76ol0e3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="11_ya4ey"]
 
 [node name="main" type="Node2D" unique_id=145423580]
+script = ExtResource("1_eb6dy")
 
 [node name="background_road" parent="." unique_id=2034696501 instance=ExtResource("5_tbgi4")]
 position = Vector2(-17, 37)
@@ -45,3 +48,21 @@ position = Vector2(-229, 145)
 
 [node name="mushroom" parent="." unique_id=790063064 instance=ExtResource("10_choun")]
 position = Vector2(-42, 145)
+
+[node name="round_counter" type="Label" parent="." unique_id=439847169]
+offset_left = -86.0
+offset_top = -209.0
+offset_right = 14.0
+offset_bottom = -186.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_ya4ey")
+theme_override_font_sizes/font_size = 16
+
+[node name="coin_counter" type="Label" parent="." unique_id=132395252]
+offset_left = -377.0
+offset_top = -209.0
+offset_right = -289.0
+offset_bottom = -186.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_ya4ey")
+theme_override_font_sizes/font_size = 16
