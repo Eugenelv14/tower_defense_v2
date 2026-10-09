@@ -1,10 +1,21 @@
 [gd_scene format=3 uid="uid://d1mk1lcc3bskx"]
 
+[ext_resource type="Script" uid="uid://dlaomf77yyi2v" path="res://scripts/tower.gd" id="1_ay4al"]
+[ext_resource type="PackedScene" uid="uid://c5huhgco1h18y" path="res://scenes/Components/health_component.tscn" id="2_ktxwe"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utxm4"]
 size = Vector2(43, 130)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_toqdm"]
+size = Vector2(49, 130)
+
 [node name="tower" type="StaticBody2D" unique_id=845851787]
 z_index = 1
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_ay4al")
+
+[node name="HealthComponent" parent="." unique_id=536127152 instance=ExtResource("2_ktxwe")]
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1346713223]
 scale = Vector2(1.3124986, 2.0400636)
@@ -15,3 +26,15 @@ uv = PackedVector2Array(16, -15.999998, -32, -15.999998, -32, 40, 16, 40)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1412954021]
 position = Vector2(-1.5, 16)
 shape = SubResource("RectangleShape2D_utxm4")
+
+[node name="hitbox" type="Area2D" parent="." unique_id=663236593]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=998522112]
+position = Vector2(-14.5, 16)
+shape = SubResource("RectangleShape2D_toqdm")
+
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]

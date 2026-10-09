@@ -14,7 +14,7 @@ initial_countdown = 3.0
 spawn_interval = 0.5
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=1703551526]
-position = Vector2(-65, 0)
+position = Vector2(-565, 0)
 
 [node name="GoalPoint" type="Marker2D" parent="." unique_id=1322508399]
 position = Vector2(55, 0)

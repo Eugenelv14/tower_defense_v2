@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://j5uero8gm1ir"]
 
 [ext_resource type="PackedScene" uid="uid://x7ii8w8oocca" path="res://scenes/spawner.tscn" id="1_m5cd5"]
+[ext_resource type="PackedScene" uid="uid://d1mk1lcc3bskx" path="res://scenes/tower.tscn" id="2_lr5j1"]
+[ext_resource type="PackedScene" uid="uid://curdodwuac87h" path="res://scenes/defender.tscn" id="3_56kpk"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_toqdm"]
 
@@ -9,14 +11,19 @@
 [node name="Enemy_Container" type="Node2D" parent="." unique_id=665569650]
 
 [node name="Spawner" parent="Enemy_Container" unique_id=1216322064 node_paths=PackedStringArray("enemy_container") instance=ExtResource("1_m5cd5")]
-position = Vector2(-1, -7)
+position = Vector2(23, -8)
 enemy_container = NodePath("..")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2055524147]
-collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1780540975]
 shape = SubResource("WorldBoundaryShape2D_toqdm")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=795969162]
+
+[node name="tower" parent="." unique_id=845851787 instance=ExtResource("2_lr5j1")]
+position = Vector2(94, -81)
+
+[node name="defender" parent="." unique_id=410263393 instance=ExtResource("3_56kpk")]
+position = Vector2(84, -157)

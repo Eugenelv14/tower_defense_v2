@@ -4,6 +4,7 @@ extends CharacterBody2D
 signal reached_goal(enemy: Enemy)
 signal killed(enemy: Enemy)
 @export var data: EnemyData
+@onready var hitbox: Area2D = $Hitbox
 
 @onready var body_shape: CollisionShape2D = $CollisionShape2D
 @onready var hurtbox_shape: CollisionShape2D = $Hitbox/CollisionShape2D
@@ -40,10 +41,11 @@ func apply_collision() -> void:
 	hurtbox_shape.position = data.hurtbox_offset
 
 func _on_health_component_died() -> void:
-	"Enemy was killed"
+	print("Enemy was killed")
 	movement.stop()
 	set_deferred("collision_layer",0)
-	hurtbox_shape.set_deferred("monitoring", false)
+	hitbox.set_deferred("monitoring", false)
+	hurtbox_shape.set_deferred("disabled", true)
 	killed.emit(self)
 	sprite.play("die")
 	await sprite.animation_finished

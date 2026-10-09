@@ -7,7 +7,8 @@ radius = 1.0000001
 height = 38.0
 
 [node name="Arrow" type="Area2D" unique_id=1685570747]
-collision_layer = 2
+collision_layer = 8
+collision_mask = 0
 script = ExtResource("1_umosx")
 
 [node name="ArrowShape" type="Polygon2D" parent="." unique_id=86107510]

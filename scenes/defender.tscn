@@ -60,7 +60,8 @@ gizmo_extents = 66.3
 
 [node name="Detection" type="Area2D" parent="." unique_id=758174806]
 position = Vector2(-79, -21)
-collision_layer = 4
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection" unique_id=2027915902]
 position = Vector2(-233, 94)
@@ -69,6 +70,6 @@ shape = SubResource("RectangleShape2D_utxm4")
 [node name="Timer" type="Timer" parent="." unique_id=991890913]
 autostart = true
 
-[connection signal="area_entered" from="Detection" to="." method="_on_detection_area_entered"]
-[connection signal="area_exited" from="Detection" to="." method="_on_detection_area_exited"]
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
