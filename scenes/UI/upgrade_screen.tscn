@@ -1,0 +1,230 @@
+[gd_scene format=3 uid="uid://i34sn0yi3xu6"]
+
+[ext_resource type="FontFile" uid="uid://b4virr76ol0e3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_auatr"]
+[ext_resource type="Script" uid="uid://cgrf7g53amoey" path="res://scenes/UI/upgrade_screen.gd" id="1_e5ypc"]
+[ext_resource type="Texture2D" uid="uid://cytwyeq4hnmfj" path="res://assets/enemy_assets/misc/4.png" id="2_klice"]
+[ext_resource type="FontFile" uid="uid://dign5e7r2mtqg" path="res://assets/fonts/PixelOperator8.ttf" id="3_rqbkw"]
+[ext_resource type="Texture2D" uid="uid://cl7hii35q3qbv" path="res://assets/enemy_assets/misc/hearts-1.png" id="4_rqbkw"]
+[ext_resource type="Texture2D" uid="uid://d0vd6quy1st1i" path="res://assets/enemy_assets/misc/gem-1.png" id="5_jho2p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_toqdm"]
+bg_color = Color(0.15775329, 0.15775335, 0.1577532, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_toqdm"]
+font = ExtResource("1_auatr")
+font_size = 18
+shadow_size = 5
+shadow_color = Color(1, 0.2, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_l62tb"]
+font = ExtResource("3_rqbkw")
+font_size = 14
+shadow_color = Color(0.88824046, 0.53021383, 0.44862735, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1hnxm"]
+font = ExtResource("1_auatr")
+shadow_color = Color(1, 0.2, 1, 1)
+
+[sub_resource type="Theme" id="Theme_klice"]
+default_font = ExtResource("1_auatr")
+
+[sub_resource type="Theme" id="Theme_toqdm"]
+default_font = ExtResource("1_auatr")
+
+[node name="UpgradeScreen" type="Control" unique_id=416203249]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e5ypc")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=783393107]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_toqdm")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=346422152]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1100497013]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1239535191]
+layout_mode = 2
+text = "CHOOSE AN UPGRADE "
+label_settings = SubResource("LabelSettings_toqdm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1922927061]
+layout_mode = 2
+
+[node name="UpgradeCard1" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=269102491]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard1" unique_id=1906083104]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard1/MarginContainer" unique_id=724218795]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard1/MarginContainer/VBoxContainer" unique_id=1586101141]
+layout_mode = 2
+text = "5 Coins"
+label_settings = SubResource("LabelSettings_l62tb")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard1/MarginContainer/VBoxContainer" unique_id=930080761]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "DAMAGE 
+UPGRADE"
+label_settings = SubResource("LabelSettings_1hnxm")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard1/MarginContainer/VBoxContainer" unique_id=949539936]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("2_klice")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard1/MarginContainer/VBoxContainer" unique_id=2041186263]
+layout_mode = 2
+text = "+3 Arrow
+Damage"
+label_settings = SubResource("LabelSettings_l62tb")
+horizontal_alignment = 1
+
+[node name="Upgradebutton1" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard1/MarginContainer/VBoxContainer" unique_id=1030851466]
+layout_mode = 2
+theme = SubResource("Theme_klice")
+text = "BUY"
+
+[node name="UpgradeCard2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=873045039]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard2" unique_id=1091355289]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard2/MarginContainer" unique_id=1162224316]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard2/MarginContainer/VBoxContainer" unique_id=2048118822]
+layout_mode = 2
+text = "8 Coins"
+label_settings = SubResource("LabelSettings_l62tb")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard2/MarginContainer/VBoxContainer" unique_id=2101745300]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "HEALTH 
+UPGRADE"
+label_settings = SubResource("LabelSettings_1hnxm")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard2/MarginContainer/VBoxContainer" unique_id=343637778]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_rqbkw")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard2/MarginContainer/VBoxContainer" unique_id=620660807]
+layout_mode = 2
+text = "+5 Tower
+Health"
+label_settings = SubResource("LabelSettings_l62tb")
+horizontal_alignment = 1
+
+[node name="Upgradebutton2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard2/MarginContainer/VBoxContainer" unique_id=593197894]
+layout_mode = 2
+theme = SubResource("Theme_klice")
+text = "BUY"
+
+[node name="UpgradeCard3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1411638738]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard3" unique_id=780433356]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard3/MarginContainer" unique_id=273678120]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard3/MarginContainer/VBoxContainer" unique_id=187049055]
+layout_mode = 2
+text = "3 Coins"
+label_settings = SubResource("LabelSettings_l62tb")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard3/MarginContainer/VBoxContainer" unique_id=227233861]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "SPEED 
+UPGRADE"
+label_settings = SubResource("LabelSettings_1hnxm")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard3/MarginContainer/VBoxContainer" unique_id=461905825]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("5_jho2p")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard3/MarginContainer/VBoxContainer" unique_id=1229507648]
+layout_mode = 2
+text = "+1 Shooting
+Speed"
+label_settings = SubResource("LabelSettings_l62tb")
+horizontal_alignment = 1
+
+[node name="UpgradeButton3" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard3/MarginContainer/VBoxContainer" unique_id=1408045384]
+layout_mode = 2
+theme = SubResource("Theme_klice")
+text = "BUY"
+
+[node name="StartNextWave" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=503216122]
+layout_mode = 2
+theme = SubResource("Theme_toqdm")
+theme_override_font_sizes/font_size = 18
+text = "BEGIN NEXT WAVE"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/StartNextWave" to="." method="_on_start_next_wave_pressed"]

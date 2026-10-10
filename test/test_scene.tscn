@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://j5uero8gm1ir"]
 
+[ext_resource type="Script" uid="uid://kgswng03ffsx" path="res://test/test_scene.gd" id="1_hldr7"]
 [ext_resource type="PackedScene" uid="uid://x7ii8w8oocca" path="res://scenes/spawner.tscn" id="1_m5cd5"]
 [ext_resource type="PackedScene" uid="uid://d1mk1lcc3bskx" path="res://scenes/tower.tscn" id="2_lr5j1"]
 [ext_resource type="PackedScene" uid="uid://curdodwuac87h" path="res://scenes/defender.tscn" id="3_56kpk"]
+[ext_resource type="PackedScene" uid="uid://i34sn0yi3xu6" path="res://scenes/UI/upgrade_screen.tscn" id="5_xdggk"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_toqdm"]
 
 [node name="test_scene" type="Node2D" unique_id=436567127]
+script = ExtResource("1_hldr7")
 
 [node name="Enemy_Container" type="Node2D" parent="." unique_id=665569650]
 
@@ -27,3 +30,11 @@ position = Vector2(94, -81)
 
 [node name="defender" parent="." unique_id=410263393 instance=ExtResource("3_56kpk")]
 position = Vector2(84, -157)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1763908164]
+
+[node name="UpgradeScreen" parent="CanvasLayer" unique_id=416203249 instance=ExtResource("5_xdggk")]
+visible = false
+
+[connection signal="waiting_for_player" from="Enemy_Container/Spawner" to="." method="_on_spawner_waiting_for_player"]
+[connection signal="next_wave_pressed" from="CanvasLayer/UpgradeScreen" to="." method="_on_upgrade_screen_next_wave_pressed"]
