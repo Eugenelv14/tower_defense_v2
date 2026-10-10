@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d1mpromkuswdj" path="res://scenes/Components/movement_component.tscn" id="2_5uy6h"]
 [ext_resource type="Resource" uid="uid://dp0l8xo05euch" path="res://data/enemy_data/skeleton_stats.tres" id="2_nenq2"]
 [ext_resource type="PackedScene" uid="uid://c5huhgco1h18y" path="res://scenes/Components/health_component.tscn" id="3_c4w8v"]
+[ext_resource type="Script" uid="uid://yr7xkx582kob" path="res://scripts/UI_Scripts/health_bar.gd" id="5_lu5c6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mkw3j"]
 animations = []
@@ -13,6 +14,13 @@ size = Vector2(35.5, 49)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5uy6h"]
 size = Vector2(18, 18)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qejym"]
+bg_color = Color(0.8519403, 0, 0.13067827, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1921786925]
 collision_layer = 2
@@ -38,6 +46,19 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=191905833]
 shape = SubResource("RectangleShape2D_5uy6h")
 debug_color = Color(0.993934, 0, 0.23709044, 0.41960785)
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=895704200 node_paths=PackedStringArray("health")]
+offset_left = -22.0
+offset_top = -20.0
+offset_right = 21.0
+offset_bottom = -16.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_qejym")
+step = 1.0
+value = 80.0
+rounded = true
+show_percentage = false
+script = ExtResource("5_lu5c6")
+health = NodePath("../HealthComponent")
 
 [connection signal="reached_end" from="MovementComponent" to="." method="_on_movement_component_reached_end"]
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://i34sn0yi3xu6"]
 
 [ext_resource type="FontFile" uid="uid://b4virr76ol0e3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_auatr"]
-[ext_resource type="Script" uid="uid://cgrf7g53amoey" path="res://scenes/UI/upgrade_screen.gd" id="1_e5ypc"]
+[ext_resource type="Script" uid="uid://cgrf7g53amoey" path="res://scripts/UI_Scripts/upgrade_screen.gd" id="1_e5ypc"]
 [ext_resource type="Texture2D" uid="uid://cytwyeq4hnmfj" path="res://assets/enemy_assets/misc/4.png" id="2_klice"]
 [ext_resource type="FontFile" uid="uid://dign5e7r2mtqg" path="res://assets/fonts/PixelOperator8.ttf" id="3_rqbkw"]
 [ext_resource type="Texture2D" uid="uid://cl7hii35q3qbv" path="res://assets/enemy_assets/misc/hearts-1.png" id="4_rqbkw"]

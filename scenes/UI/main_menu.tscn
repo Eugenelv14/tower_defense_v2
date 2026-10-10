@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cyo4hdhjq2t40"]
 
-[ext_resource type="Script" uid="uid://c3nr31pa6id81" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://c3nr31pa6id81" path="res://scripts/UI_Scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="FontFile" uid="uid://b4virr76ol0e3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_ekxnf"]
 
 [node name="main_menu" type="Node2D" unique_id=1906694974]

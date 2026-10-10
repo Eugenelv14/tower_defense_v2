@@ -6,6 +6,8 @@
 [resource]
 script = ExtResource("1_k1q7x")
 sprite_frames = ExtResource("2_7w0w4")
+max_health = 20
+attack_damage = 5
 attack_interval = 2.0
 coins_dropped = 3
 speed = 2000

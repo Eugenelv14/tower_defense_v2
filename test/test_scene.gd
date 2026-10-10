@@ -9,11 +9,11 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
-func _on_spawner_waiting_for_player(next_wave_number: int) -> void:
+func _on_spawner_waiting_for_player(_next_wave_number: int) -> void:
 	upgrade_screen.open()
 
 
