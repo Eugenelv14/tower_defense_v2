@@ -74,6 +74,7 @@ theme_override_constants/margin_bottom = 15
 layout_mode = 2
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1239535191]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 text = "CHOOSE AN UPGRADE "
 label_settings = SubResource("LabelSettings_toqdm")
@@ -125,6 +126,7 @@ label_settings = SubResource("LabelSettings_l62tb")
 horizontal_alignment = 1
 
 [node name="Upgradebutton1" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard1/MarginContainer/VBoxContainer" unique_id=1030851466]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = SubResource("Theme_klice")
 text = "BUY"
@@ -171,6 +173,7 @@ label_settings = SubResource("LabelSettings_l62tb")
 horizontal_alignment = 1
 
 [node name="Upgradebutton2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard2/MarginContainer/VBoxContainer" unique_id=593197894]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = SubResource("Theme_klice")
 text = "BUY"
@@ -217,11 +220,13 @@ label_settings = SubResource("LabelSettings_l62tb")
 horizontal_alignment = 1
 
 [node name="UpgradeButton3" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard3/MarginContainer/VBoxContainer" unique_id=1408045384]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = SubResource("Theme_klice")
 text = "BUY"
 
 [node name="StartNextWave" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=503216122]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = SubResource("Theme_toqdm")
 theme_override_font_sizes/font_size = 18
