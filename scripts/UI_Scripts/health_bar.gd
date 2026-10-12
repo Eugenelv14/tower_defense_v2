@@ -3,7 +3,6 @@ extends ProgressBar
 @export var health: HealthComponent
 @export var visible_time: float = 2.0   # seconds on screen after a hit
 @export var fade_time: float = 0.4
-
 var tween: Tween
 
 func _ready() -> void:

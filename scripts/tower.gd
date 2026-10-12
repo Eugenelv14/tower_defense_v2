@@ -22,16 +22,16 @@ func _physics_process(delta: float) -> void:
 		if attackers[enemy] <= 0.0:
 			enemy.sprite.play("attack")
 			enemy.movement.stop()
-			health.take_damage(enemy.data.attack_damage)
+			health.take_damage(enemy.data.attack_damage)			
 			print("Your tower is taking damage!")
 			print("Health Remaining: ", health.current_health)
 			attackers[enemy] = enemy.data.attack_interval
 
 func _on_health_component_died() -> void:
-	"Tower has been destroyed"
 	for enemy in attackers.keys():
-		enemy.sprite.play("move")
-		enemy.movement.resume()
+		if is_instance_valid(enemy):
+			enemy.sprite.play("move")
+			enemy.movement.resume()
 	queue_free()
 
 func _on_hitbox_body_entered(body: Node2D) -> void:

@@ -232,4 +232,5 @@ theme = SubResource("Theme_toqdm")
 theme_override_font_sizes/font_size = 18
 text = "BEGIN NEXT WAVE"
 
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/UpgradeCard1/MarginContainer/VBoxContainer/Upgradebutton1" to="." method="_on_upgradebutton_1_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/StartNextWave" to="." method="_on_start_next_wave_pressed"]

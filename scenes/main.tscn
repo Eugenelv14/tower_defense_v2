@@ -3,19 +3,24 @@
 [ext_resource type="Script" uid="uid://c6icqstuwp13c" path="res://scripts/main.gd" id="1_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://d1mk1lcc3bskx" path="res://scenes/tower.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://curdodwuac87h" path="res://scenes/defender.tscn" id="2_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://c6obibxyiik7u" path="res://scenes/enemies/enemy.tscn" id="2_85g3d"]
-[ext_resource type="PackedScene" uid="uid://dotyl1ky6rwxr" path="res://scenes/background_sky.tscn" id="4_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://b128t3uu8gh1a" path="res://scenes/background_road.tscn" id="5_tbgi4"]
-[ext_resource type="Script" uid="uid://dh3fqboln20dw" path="res://scripts/coin_counter.gd" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://i34sn0yi3xu6" path="res://scenes/UI/upgrade_screen.tscn" id="3_tipki"]
+[ext_resource type="PackedScene" uid="uid://dotyl1ky6rwxr" path="res://scenes/world/background_sky.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://b128t3uu8gh1a" path="res://scenes/world/background_road.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://bmby1ohaxpji6" path="res://scenes/UI/ui.tscn" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://x7ii8w8oocca" path="res://scenes/enemies/spawner.tscn" id="9_choun"]
-[ext_resource type="FontFile" uid="uid://b4virr76ol0e3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="11_ya4ey"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_y4kuj"]
 
-[node name="main" type="Node2D" unique_id=145423580 node_paths=PackedStringArray("spawner")]
+[node name="main" type="Node2D" unique_id=145423580]
 script = ExtResource("1_eb6dy")
-spawner = NodePath("Spawner")
-enemy = ExtResource("2_85g3d")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=250823846]
+
+[node name="UI" parent="CanvasLayer" unique_id=2138796937 node_paths=PackedStringArray("main_control") instance=ExtResource("9_85g3d")]
+main_control = NodePath("../..")
+
+[node name="UpgradeScreen" parent="CanvasLayer" unique_id=416203249 instance=ExtResource("3_tipki")]
+visible = false
 
 [node name="background_road" parent="." unique_id=2034696501 instance=ExtResource("5_tbgi4")]
 position = Vector2(-17, 37)
@@ -32,25 +37,6 @@ position = Vector2(329, 95)
 [node name="defender" parent="." unique_id=410263393 instance=ExtResource("2_0wfyh")]
 position = Vector2(327, 19)
 
-[node name="round_counter" type="Label" parent="." unique_id=439847169]
-offset_left = -86.0
-offset_top = -209.0
-offset_right = 14.0
-offset_bottom = -186.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("11_ya4ey")
-theme_override_font_sizes/font_size = 16
-
-[node name="coin_counter" type="Label" parent="." unique_id=132395252]
-offset_left = -377.0
-offset_top = -209.0
-offset_right = -289.0
-offset_bottom = -186.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("11_ya4ey")
-theme_override_font_sizes/font_size = 16
-script = ExtResource("7_o6xl0")
-
 [node name="Spawner" parent="." unique_id=1216322064 instance=ExtResource("9_choun")]
 position = Vector2(156, 151)
 
@@ -59,3 +45,8 @@ position = Vector2(0, 177)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=967694691]
 shape = SubResource("WorldBoundaryShape2D_y4kuj")
+
+[connection signal="next_wave_pressed" from="CanvasLayer/UpgradeScreen" to="." method="_on_upgrade_screen_next_wave_pressed"]
+[connection signal="enemy_removed" from="Spawner" to="." method="_on_spawner_enemy_removed"]
+[connection signal="waiting_for_player" from="Spawner" to="." method="_on_spawner_waiting_for_player"]
+[connection signal="wave_started" from="Spawner" to="." method="_on_spawner_wave_started"]

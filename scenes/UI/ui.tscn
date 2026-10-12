@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://bmby1ohaxpji6"]
+
+[ext_resource type="FontFile" uid="uid://b4virr76ol0e3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_suays"]
+[ext_resource type="Script" uid="uid://dfdu2fufy11kv" path="res://scripts/UI_Scripts/ui.gd" id="1_yb1mt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nt14h"]
+font = ExtResource("1_suays")
+font_size = 24
+shadow_size = 2
+shadow_color = Color(0.9490196, 0, 0.03529412, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_suays"]
+font = ExtResource("1_suays")
+font_size = 24
+shadow_size = 2
+shadow_color = Color(0.9490196, 0, 0.03529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_toqdm"]
+bg_color = Color(0.9490196, 0, 0.03529412, 1)
+corner_radius_top_left = 6
+corner_radius_bottom_left = 6
+
+[node name="UI" type="Control" unique_id=2138796937]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yb1mt")
+
+[node name="coin_counter" type="Label" parent="." unique_id=1173440495]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 152.0
+offset_bottom = 32.0
+text = "Coins: "
+label_settings = SubResource("LabelSettings_nt14h")
+
+[node name="round_counter" type="Label" parent="." unique_id=1854261126]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_top = 8.0
+offset_right = 30.0
+offset_bottom = 32.0
+grow_horizontal = 2
+text = "Round: "
+label_settings = SubResource("LabelSettings_suays")
+
+[node name="Tower_label" type="Label" parent="." unique_id=1539093099]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_top = 8.0
+offset_right = -5.0
+offset_bottom = 32.0
+grow_horizontal = 0
+text = "Tower HP "
+label_settings = SubResource("LabelSettings_suays")
+horizontal_alignment = 2
+
+[node name="tower_health_bar" type="ProgressBar" parent="Tower_label" unique_id=328004770]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 32.0
+offset_right = 179.0
+offset_bottom = 59.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_toqdm")
+step = 1.0
+value = 100.0
+rounded = true
+fill_mode = 1
+show_percentage = false

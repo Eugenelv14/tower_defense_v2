@@ -3,10 +3,10 @@ extends Node2D
 
 signal wave_started(wave_number: int, total_waves: int)
 signal wave_cleared(wave_number: int)
-signal waiting_for_player(next_wave_number: int)   # show the upgrade screen on this
+signal waiting_for_player(next_wave_number: int)
 signal all_waves_completed
-signal enemy_removed
-signal player_ready                                # internal: resumes the loop
+signal enemy_removed(coins: int)
+signal player_ready  
 
 
 @export var enemy_scene: PackedScene
@@ -90,7 +90,6 @@ func _spawn_enemy(data: EnemyData) -> void:
 	var enemy: Enemy = enemy_scene.instantiate()
 	enemy.data = data
 	enemy.goal_x = goal_point.global_position.x
-	enemy.killed.connect(main._coin_earned)
 	enemy.killed.connect(_on_enemy_gone)
 	enemy.reached_goal.connect(_on_enemy_gone)
 	alive_enemies += 1
@@ -102,9 +101,9 @@ func _add_enemy_deferred(parent: Node, enemy: Enemy) -> void:
 	parent.add_child(enemy)
 	enemy.global_position = spawn_point.global_position
 
-func _on_enemy_gone(_enemy: Enemy) -> void:
+func _on_enemy_gone(enemy: Enemy) -> void:
 	alive_enemies -= 1
-	enemy_removed.emit()
+	enemy_removed.emit(enemy.data.coins_dropped)
 
 func _wait(seconds: float) -> void:
 	if seconds > 0.0:

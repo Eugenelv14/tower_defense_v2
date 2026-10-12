@@ -1,24 +1,27 @@
 extends Node2D
 
-@onready var round_counter: Label = $round_counter
-@onready var coin_counter: Label = $coin_counter
-@export var spawner: Spawner
-@export var enemy: PackedScene
+@onready var tower: StaticBody2D = $tower
+@onready var upgrade_screen: Control = $CanvasLayer/UpgradeScreen
+@onready var spawner: Spawner = $Spawner
 
-
-var current_coins: int = 0
-var current_round: int = 0
+signal update_coin_counter(coins:int)
+signal update_round_counter(round:int)
+signal update_health_bar(current_health: int, max_health: int)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	coin_counter.text = "Coins: " + str(current_coins)
-	round_counter.text = "Round: " + str(current_round)
-	spawner.wave_started.connect(_round_change)
-	
-func _coin_earned(_enemy: Enemy) -> void:
-	current_coins += 1
-	coin_counter.text = "Coins: " + str(current_coins)
+	tower.health.health_changed.connect(update_health_bar.emit)
 
-func _round_change(_wave_number: int, _total_waves: int) -> void:
-	current_round = _wave_number
-	round_counter.text = "Round: " + str(current_round)
+# LABELS
+func _on_spawner_enemy_removed(coins: int) -> void:
+	update_coin_counter.emit(coins)
+
+func _on_spawner_wave_started(wave_number: int, _total_waves: int) -> void:
+	update_round_counter.emit(wave_number)
+
+# UPGRADE SCREEN
+func _on_spawner_waiting_for_player(_next_wave_number: int) -> void:
+	upgrade_screen.open()
+
+func _on_upgrade_screen_next_wave_pressed() -> void:
+	spawner.continue_to_next_wave()

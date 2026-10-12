@@ -10,5 +10,5 @@ max_health = 20
 attack_damage = 5
 attack_interval = 2.0
 coins_dropped = 3
-speed = 2000
+speed = 2500
 metadata/_custom_type_script = "uid://c1mwnegqrs203"
