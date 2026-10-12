@@ -8,6 +8,7 @@ signal all_waves_completed
 signal enemy_removed
 signal player_ready                                # internal: resumes the loop
 
+
 @export var enemy_scene: PackedScene
 @export var enemy_container: Node
 
@@ -22,6 +23,8 @@ signal player_ready                                # internal: resumes the loop
 
 @onready var spawn_point: Marker2D = $SpawnPoint
 @onready var goal_point: Marker2D = $GoalPoint
+
+@onready var main = get_parent()
 
 var current_wave: int = 0
 var alive_enemies: int = 0
@@ -87,6 +90,7 @@ func _spawn_enemy(data: EnemyData) -> void:
 	var enemy: Enemy = enemy_scene.instantiate()
 	enemy.data = data
 	enemy.goal_x = goal_point.global_position.x
+	enemy.killed.connect(main._coin_earned)
 	enemy.killed.connect(_on_enemy_gone)
 	enemy.reached_goal.connect(_on_enemy_gone)
 	alive_enemies += 1
