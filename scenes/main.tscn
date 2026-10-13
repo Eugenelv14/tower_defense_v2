@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b128t3uu8gh1a" path="res://scenes/world/background_road.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bmby1ohaxpji6" path="res://scenes/UI/ui.tscn" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://x7ii8w8oocca" path="res://scenes/enemies/spawner.tscn" id="9_choun"]
+[ext_resource type="Script" uid="uid://dwefdxu7qojrh" path="res://scripts/pause.gd" id="9_ya4ey"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_y4kuj"]
 
@@ -45,6 +46,10 @@ position = Vector2(0, 177)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=967694691]
 shape = SubResource("WorldBoundaryShape2D_y4kuj")
+
+[node name="Pause" type="Node2D" parent="." unique_id=766704957]
+process_mode = 3
+script = ExtResource("9_ya4ey")
 
 [connection signal="next_wave_pressed" from="CanvasLayer/UpgradeScreen" to="." method="_on_upgrade_screen_next_wave_pressed"]
 [connection signal="enemy_removed" from="Spawner" to="." method="_on_spawner_enemy_removed"]

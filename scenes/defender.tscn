@@ -68,6 +68,7 @@ position = Vector2(-233, 94)
 shape = SubResource("RectangleShape2D_utxm4")
 
 [node name="Timer" type="Timer" parent="." unique_id=991890913]
+wait_time = 0.6
 autostart = true
 
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]

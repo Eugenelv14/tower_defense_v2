@@ -61,7 +61,7 @@ offset_top = 8.0
 offset_right = -5.0
 offset_bottom = 32.0
 grow_horizontal = 0
-text = "Tower HP "
+text = "Tower   "
 label_settings = SubResource("LabelSettings_suays")
 horizontal_alignment = 2
 
