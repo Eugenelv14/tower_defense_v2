@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://c5wkkdqx5ly60"]
+
+[ext_resource type="Script" uid="uid://c1mwnegqrs203" path="res://resources/enemy_data.gd" id="1_3ibmv"]
+[ext_resource type="SpriteFrames" uid="uid://cj8pykkbamexl" path="res://data/frame_data/mushroom_frames.tres" id="2_8aqhy"]
+
+[resource]
+script = ExtResource("1_3ibmv")
+sprite_frames = ExtResource("2_8aqhy")
+sprite_offset = Vector2(0, 50)
+max_health = 15
+attack_damage = 4
+attack_interval = 1.8
+coins_dropped = 4
+speed = 2000
+metadata/_custom_type_script = "uid://c1mwnegqrs203"

@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_negrw")
 sprite_frames = ExtResource("2_fnyte")
-max_health = 20
+max_health = 10
 attack_damage = 2
 attack_interval = 2.0
 coins_dropped = 2

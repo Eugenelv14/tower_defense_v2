@@ -4,6 +4,7 @@ extends Resource
 
 @export var sprite_frames: SpriteFrames
 @export var sprite_scale: Vector2 = Vector2.ONE
+@export var sprite_offset: Vector2 = Vector2.ZERO 
 
 @export var max_health: int
 @export var attack_damage: int 

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://fw68tn7k1sn3"]
+
+[ext_resource type="Script" uid="uid://c1mwnegqrs203" path="res://resources/enemy_data.gd" id="1_omlmi"]
+[ext_resource type="SpriteFrames" uid="uid://df6wy3p2c6inh" path="res://data/frame_data/demon_frames.tres" id="2_lw6q5"]
+
+[resource]
+script = ExtResource("1_omlmi")
+sprite_frames = ExtResource("2_lw6q5")
+max_health = 40
+attack_damage = 10
+attack_interval = 2.0
+coins_dropped = 100
+speed = 1500
+body_size = Vector2(50, 100)
+hurtbox_size = Vector2(40, 100)
+hurtbox_offset = Vector2(15, 0)
+metadata/_custom_type_script = "uid://c1mwnegqrs203"

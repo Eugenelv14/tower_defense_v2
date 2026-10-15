@@ -1,8 +1,12 @@
 extends Node2D
 
+const MIN_WAIT_TIME := 0.3
+
 @export var arrow: PackedScene
 @onready var arrow_spawn: Marker2D = $ArrowSpawn
+@onready var timer: Timer = $Timer
 
+@export var arrow_damage:int = 5
 var tracking: Array[Node2D] = []
 var closest_enemy: Node2D = null
 
@@ -28,8 +32,19 @@ func _on_timer_timeout() -> void:
 		return
 	var created_arrow = arrow.instantiate()
 	created_arrow.target = closest_enemy
+	created_arrow.arrow_damage = arrow_damage
 	add_child(created_arrow)
 	created_arrow.global_position = arrow_spawn.global_position
+
+func upgrade_damage(amount:int) -> void:
+	arrow_damage += amount
+
+func upgrade_fire_rate(step:float) -> bool:
+	var new_time := snappedf(timer.wait_time - step, 0.01)
+	if new_time < MIN_WAIT_TIME - 0.001:
+		return false
+	timer.wait_time = new_time
+	return true
 
 func _on_detection_body_entered(body: Node2D) -> void:
 	if body is Enemy and body not in tracking:

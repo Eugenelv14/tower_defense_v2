@@ -8,7 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://b128t3uu8gh1a" path="res://scenes/world/background_road.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bmby1ohaxpji6" path="res://scenes/UI/ui.tscn" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://x7ii8w8oocca" path="res://scenes/enemies/spawner.tscn" id="9_choun"]
+[ext_resource type="Script" uid="uid://dnyrbw7w1catg" path="res://resources/wave_data.gd" id="9_trceg"]
 [ext_resource type="Script" uid="uid://dwefdxu7qojrh" path="res://scripts/pause.gd" id="9_ya4ey"]
+[ext_resource type="Resource" uid="uid://dani54dobskcs" path="res://data/wave_data/test_wave.tres" id="10_a8y0u"]
+[ext_resource type="Resource" uid="uid://d3qo0q08dsej" path="res://data/wave_data/wave_01.tres" id="11_jkv2x"]
+[ext_resource type="Resource" uid="uid://b53eogi67e55l" path="res://data/wave_data/wave_02.tres" id="12_jbj1t"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_y4kuj"]
 
@@ -40,6 +44,7 @@ position = Vector2(327, 19)
 
 [node name="Spawner" parent="." unique_id=1216322064 instance=ExtResource("9_choun")]
 position = Vector2(156, 151)
+waves = Array[ExtResource("9_trceg")]([ExtResource("10_a8y0u"), ExtResource("11_jkv2x"), ExtResource("12_jbj1t")])
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1004374097]
 position = Vector2(0, 177)
@@ -52,6 +57,7 @@ process_mode = 3
 script = ExtResource("9_ya4ey")
 
 [connection signal="next_wave_pressed" from="CanvasLayer/UpgradeScreen" to="." method="_on_upgrade_screen_next_wave_pressed"]
+[connection signal="upgrade_purchased" from="CanvasLayer/UpgradeScreen" to="." method="_on_upgrade_screen_upgrade_purchased"]
 [connection signal="enemy_removed" from="Spawner" to="." method="_on_spawner_enemy_removed"]
 [connection signal="waiting_for_player" from="Spawner" to="." method="_on_spawner_waiting_for_player"]
 [connection signal="wave_started" from="Spawner" to="." method="_on_spawner_wave_started"]

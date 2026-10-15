@@ -25,3 +25,10 @@ func take_damage(amount: int) -> void:
 	if current_health == 0:
 		is_dead = true
 		died.emit()
+
+func increase_max_health(amount: int) -> void:
+	if is_dead or amount <= 0:
+		return
+	max_health += amount
+	current_health += amount
+	health_changed.emit(current_health, max_health)

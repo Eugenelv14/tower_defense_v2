@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_k1q7x")
 sprite_frames = ExtResource("2_7w0w4")
+sprite_offset = Vector2(0, 50)
 max_health = 20
 attack_damage = 5
 attack_interval = 2.0

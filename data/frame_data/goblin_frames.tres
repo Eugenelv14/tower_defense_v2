@@ -210,7 +210,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"move",
-"speed": 6.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,

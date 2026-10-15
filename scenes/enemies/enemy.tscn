@@ -48,10 +48,10 @@ shape = SubResource("RectangleShape2D_5uy6h")
 debug_color = Color(0.993934, 0, 0.23709044, 0.41960785)
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=895704200 node_paths=PackedStringArray("health")]
-offset_left = -22.0
-offset_top = -20.0
-offset_right = 21.0
-offset_bottom = -16.0
+offset_left = -20.0
+offset_top = -35.0
+offset_right = 23.0
+offset_bottom = -31.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_qejym")
 step = 1.0
 value = 80.0

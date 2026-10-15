@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="WaveData" format=3 uid="uid://dani54dobskcs"]
+
+[ext_resource type="Script" uid="uid://dh2bwarpht5js" path="res://resources/spawn_group.gd" id="1_x1pbt"]
+[ext_resource type="Script" uid="uid://dnyrbw7w1catg" path="res://resources/wave_data.gd" id="2_bxpf2"]
+[ext_resource type="Resource" uid="uid://dqg5be6142fvt" path="res://data/enemy_data/slime_stats.tres" id="2_nm4o0"]
+[ext_resource type="Resource" uid="uid://ggfgn6d8qrd7" path="res://data/enemy_data/goblin_stats.tres" id="3_xgjt2"]
+[ext_resource type="Resource" uid="uid://dp0l8xo05euch" path="res://data/enemy_data/skeleton_stats.tres" id="4_cdcxc"]
+[ext_resource type="Resource" uid="uid://c5wkkdqx5ly60" path="res://data/enemy_data/mushroom.tres" id="5_u1elw"]
+[ext_resource type="Resource" uid="uid://w8pcpp2nm3vt" path="res://data/enemy_data/flying_eye.tres" id="6_u2m1g"]
+[ext_resource type="Resource" uid="uid://fw68tn7k1sn3" path="res://data/enemy_data/demon_boss.tres" id="7_bb0f3"]
+
+[sub_resource type="Resource" id="Resource_y5odb"]
+script = ExtResource("1_x1pbt")
+enemy = ExtResource("2_nm4o0")
+count = 1
+metadata/_custom_type_script = "uid://dh2bwarpht5js"
+
+[sub_resource type="Resource" id="Resource_u3h6u"]
+script = ExtResource("1_x1pbt")
+enemy = ExtResource("3_xgjt2")
+count = 1
+metadata/_custom_type_script = "uid://dh2bwarpht5js"
+
+[sub_resource type="Resource" id="Resource_egoj0"]
+script = ExtResource("1_x1pbt")
+enemy = ExtResource("4_cdcxc")
+count = 1
+metadata/_custom_type_script = "uid://dh2bwarpht5js"
+
+[sub_resource type="Resource" id="Resource_ibmk5"]
+script = ExtResource("1_x1pbt")
+enemy = ExtResource("5_u1elw")
+count = 1
+metadata/_custom_type_script = "uid://dh2bwarpht5js"
+
+[sub_resource type="Resource" id="Resource_nm4o0"]
+script = ExtResource("1_x1pbt")
+enemy = ExtResource("6_u2m1g")
+count = 1
+metadata/_custom_type_script = "uid://dh2bwarpht5js"
+
+[sub_resource type="Resource" id="Resource_xgjt2"]
+script = ExtResource("1_x1pbt")
+enemy = ExtResource("7_bb0f3")
+count = 1
+metadata/_custom_type_script = "uid://dh2bwarpht5js"
+
+[resource]
+script = ExtResource("2_bxpf2")
+groups = Array[ExtResource("1_x1pbt")]([SubResource("Resource_y5odb"), SubResource("Resource_u3h6u"), SubResource("Resource_egoj0"), SubResource("Resource_ibmk5"), SubResource("Resource_nm4o0"), SubResource("Resource_xgjt2")])
+metadata/_custom_type_script = "uid://dnyrbw7w1catg"

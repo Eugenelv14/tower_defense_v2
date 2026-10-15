@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://w8pcpp2nm3vt"]
+
+[ext_resource type="Script" uid="uid://c1mwnegqrs203" path="res://resources/enemy_data.gd" id="1_3widh"]
+[ext_resource type="SpriteFrames" uid="uid://70w4sny7ub48" path="res://data/frame_data/flying_eye_frames.tres" id="2_bv2ed"]
+
+[resource]
+script = ExtResource("1_3widh")
+sprite_frames = ExtResource("2_bv2ed")
+sprite_offset = Vector2(0, 30)
+max_health = 20
+attack_damage = 4
+attack_interval = 1.5
+coins_dropped = 5
+speed = 2100
+hurtbox_offset = Vector2(0, -20)
+metadata/_custom_type_script = "uid://c1mwnegqrs203"

@@ -6,4 +6,10 @@
 [resource]
 script = ExtResource("1_8j2pq")
 sprite_frames = ExtResource("2_1aei7")
+sprite_offset = Vector2(0, 50)
+max_health = 15
+attack_damage = 5
+attack_interval = 2.0
+coins_dropped = 4
+speed = 2300
 metadata/_custom_type_script = "uid://c1mwnegqrs203"

@@ -19,26 +19,33 @@ var goal_x: float = INF
 
 func _ready() -> void:
 	assert(data != null, "Enemy needs an EnemyData resource")
-	
-	# Link Sprites frames
+
 	sprite.sprite_frames = data.sprite_frames
 	sprite.scale = data.sprite_scale
+	_align_sprite()
 	sprite.play("move")
 	apply_collision()
-	
+
 	health.setup(data.max_health)
 	movement.setup(data.speed, goal_x)
-
+	
+func _align_sprite() -> void:
+	# Put the bottom edge of the frame on the origin (the feet), then apply the nudge
+	var frame := data.sprite_frames.get_frame_texture("move", 0)
+	var height := frame.get_size().y * data.sprite_scale.y
+	sprite.position = Vector2(0, -height / 2.0) + data.sprite_offset
+	
 func apply_collision() -> void:
 	var body := RectangleShape2D.new()
 	body.size = data.body_size
 	body_shape.shape = body
-	body_shape.position = data.body_offset
+	# Bottom edge of the shape sits on the origin
+	body_shape.position = Vector2(0, -data.body_size.y / 2.0) + data.body_offset
 
 	var hurt := RectangleShape2D.new()
 	hurt.size = data.hurtbox_size
 	hurtbox_shape.shape = hurt
-	hurtbox_shape.position = data.hurtbox_offset
+	hurtbox_shape.position = Vector2(0, -data.hurtbox_size.y / 2.0) + data.hurtbox_offset
 
 func _on_health_component_died() -> void:
 	print("Enemy was killed")
