@@ -11,7 +11,4 @@ attack_damage = 10
 attack_interval = 2.0
 coins_dropped = 100
 speed = 1500
-body_size = Vector2(50, 100)
-hurtbox_size = Vector2(40, 100)
-hurtbox_offset = Vector2(15, 0)
 metadata/_custom_type_script = "uid://c1mwnegqrs203"
